@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,4 @@ Route::resource('dashboard', DashboardController::class, ['except' => ['edit', '
 Route::resource('logout', LogoutController::class, ['except' => ['edit', 'create']]);
 Route::resource('login', LoginController::class, ['except' => ['edit', 'create']]);
 Route::resource('register', RegisterController::class, ['except' => ['edit', 'create']]);
-
-Route::get('/posts', function () {
-    // return view('welcome');
-    return view('posts.index');
-})->name('posts');
+Route::resource('posts', PostController::class, ['except' => ['edit', 'create']]);
