@@ -8,7 +8,7 @@
             {{session('status')}}
         </div>
         @endif
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('login.store') }}" method="post">
             @csrf
             <div class="mb-4">
                 <label for="email" class="sr-only">Email</label>

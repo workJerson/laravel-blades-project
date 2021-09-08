@@ -15,7 +15,7 @@
                 </li>
                 @auth
                 <li>
-                    <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
+                    <a href="{{ route('dashboard.index') }}" class="p-3">Dashboard</a>
                 </li>
                 <li>
                     <a href="{{ route('posts') }}" class="p-3">Posts</a>
@@ -29,7 +29,7 @@
                     </li>
 
                     <li>
-                        <form action="{{route('logout')}}" method="post" class="p-3 inline">
+                        <form action="{{route('logout.store')}}" method="post" class="p-3 inline">
                             @csrf
                             <button type="submit">Logout</button>
                         </form>
@@ -37,10 +37,10 @@
                 @endauth
                 @guest
                     <li>
-                        <a href="{{ route('login') }}" class="p-3">Login</a>
+                        <a href="{{ route('login.index') }}" class="p-3">Login</a>
                     </li>
                     <li>
-                        <a href="{{ route('register') }}" class="p-3">Register</a>
+                        <a href="{{ route('register.index') }}" class="p-3">Register</a>
                     </li>
                 @endguest
             </ul>
